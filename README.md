@@ -4,7 +4,7 @@
 
 This app is a simply search tool for finding the top 24 "interesting" pictures on Flickr for a given search term.
 
-![]((https://user-images.githubusercontent.com/53430036/83976168-574ee280-a8c6-11ea-97ad-41d3ac2217b8.png))
+![](https://user-images.githubusercontent.com/53430036/83976168-574ee280-a8c6-11ea-97ad-41d3ac2217b8.png)
 
 ## Installation
 
