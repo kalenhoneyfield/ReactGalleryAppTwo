@@ -2,12 +2,14 @@
  * Basic Structure 
  * App
  *  Header
+ *    Home
+ *  Header
  *    Search bar
  *    Nav bar
- *  Photo container
- *    List of photos
- * 
- *  404
+ *      Photo container
+ *        List of photos
+ *  Header
+ *    404
  */
 
 import React, { Component } from "react"
@@ -32,16 +34,19 @@ import api_key from './config'
 
 //requirements for the project ask for the key to be in a config file
 const APIKEY = process.env.REACT_APP_API_KEY || api_key
+
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      photos: [],  //to store the photo array
+      photos: [],     //to store the photo array
       searchWord: '', //to store the query
-      dynTags: [], //to setup the dynamic tags
+      dynTags: [],    //to setup the dynamic tags
+      loading: true   //to determine loading state
     }
   } 
 
+  //when the app first opens generate some nav tags
   componentDidMount() {
     this.generateDynTags() 
   }
@@ -53,14 +58,32 @@ class App extends Component {
       .then(response => {
         this.setState({
           photos: response.data.photos.photo,
-          searchWord: query
+          searchWord: query,
+          loading: true
         })
+        this.handleLoading()
         console.log('A Request to the API was just made')
       })
       .catch(error => {
         console.log('Error fetching and parsing data', error);
       })
     }
+
+  }
+
+
+  /*
+  This sets loading to false:
+  Doing it this way does 2 things
+  1: The user will likely see the loading screen even with fast internet
+  2: more importantly this effectly resets the loading state between each search, otherwise the loading screen would only ever appear on the first search
+  */
+  handleLoading = () => {
+    setTimeout( () => {
+      this.setState({
+        loading: false
+      })
+    }, 1500)
 
   }
 
@@ -84,8 +107,10 @@ class App extends Component {
           <Header dynTags={this.state.dynTags}/>
   
           <Switch>
+            {/* route for all searches and navlink clicks */}
+            {/* using this method simplifies the user experience and handling */}
             <Route path="/search/:tag">
-              <PhotoContainer photos={this.state.photos} performSearch={this.performSearch}/>
+              <PhotoContainer photos={this.state.photos} performSearch={this.performSearch} loading={this.state.loading} />
             </Route>
             {/* Home route */}
             <Route exact path="/">

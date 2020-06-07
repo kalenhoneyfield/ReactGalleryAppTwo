@@ -4,14 +4,15 @@ import {
   } from "react-router-dom"
 
 import Photo from './Photo'
+import Loading from './Loading'
 
 const PhotoContainer = (props) => {
 
-    let { tag } = useParams();
+    let { tag } = useParams(); //lets figure out where we are
 
     const results = props.photos
 
-    let photos
+    let photos 
     if(results.length > 0){
       photos = results.map(foto =>  (
                  <Photo 
@@ -39,11 +40,18 @@ const PhotoContainer = (props) => {
         
         <div className="photo-container">
             {/* Why does the below props function run over and over again on a single load 11k API hits in less than 15 mins... WTF */}
+            {/* Note: bandaid has been applied to the function in the App.js file */}
             {props.performSearch(tag, 1, 24)}
         <h2>Results for: {tag} </h2>
-        <ul>
-            {photos}
-        </ul>
+
+        {/* if loading is still true, show the loading screen, otherwise, show the photos */}
+        { props.loading 
+            ? <Loading /> 
+            : ( <ul>
+                {photos}
+                </ul>)
+        }
+
       </div>
     )
 }

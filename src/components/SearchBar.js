@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-
+// Need state here to manage the search query itself, not the actual search
 class SearchBar extends Component {
     constructor() {
         super();
@@ -13,13 +13,11 @@ class SearchBar extends Component {
         this.setState({ searchQuery: e.target.value }); //this causes a state change, which causes a render (:lightbulb:)
       }  
       
+    // push the history/url for the event, let the PhotoContainer handle the query itself
     handleSubmit = e => {
         e.preventDefault()
-        // this.props.onSearch(this.query.value, 1, 24)
         this.props.handleHistoryPush(`/search/${this.state.searchQuery}`)
-        console.log(this.query.value)
         e.currentTarget.reset()
-
       }
 
     render(){

@@ -2,6 +2,7 @@ body {
   text-align: center;
   font-family: 'Open Sans', sans-serif;
   color: #3f4850;
+  background-color: #CBD4C2;
 }
 
 h2 {
@@ -27,7 +28,8 @@ a {
 
 .search-form button {
   outline: none;
-  background-color: #438bbd;
+  /* background-color: #438bbd; */
+  background-color: #883955;
   border: none;
   padding: 0px 15px;
   border-radius: 0 0.35em 0.35em 0;
@@ -52,7 +54,8 @@ input {
 
 .main-nav a {
   display: block;
-  background: #438bbd;
+  /* background: #438bbd; */
+  background: #883955;
   border-radius: 3px;
   padding: 5px;
   color: #fff;
@@ -61,7 +64,8 @@ input {
 .main-nav .active,
 .main-nav a:hover,
 .search-form button:hover {
-  background-color: #275270;
+  /* background-color: #275270; */
+  background-color: #4c3549;
 }
 
 .photo-container ul {
@@ -122,4 +126,13 @@ input {
     margin: 10px;
     width: 100px;
   }
+}
+
+.FourOhFour {
+  fill: #883955;
+  text-shadow: 3px 3px 5px #4c3549;
+}
+
+.Loading {
+  filter: drop-shadow(3px 3px 3px #4c3549);
 }
