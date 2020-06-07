@@ -136,3 +136,14 @@ input {
 .Loading {
   filter: drop-shadow(3px 3px 3px #4c3549);
 }
+
+.HomePhoto {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.HomePhoto img{
+  box-shadow: 5px 5px 5px #3f4850;
+}
+

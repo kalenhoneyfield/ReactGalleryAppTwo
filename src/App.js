@@ -54,7 +54,7 @@ class App extends Component {
   //perform the actual search, default values provided, and the if statement is in place to prevent React from behaving badly
   performSearch = (query = `kittens`, pageNum = 1, perPage = 1) => {
     if(this.state.searchWord !== query){
-      axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${APIKEY}&tags=${query}&per_page=${perPage}&page=${pageNum}&safe_search=1&format=json&nojsoncallback=1`)
+      axios.get(`https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${APIKEY}&tags=${query}&per_page=${perPage}&page=${pageNum}&sort=interestingness-desc&content_type=1&format=json&nojsoncallback=1`)
       .then(response => {
         this.setState({
           photos: response.data.photos.photo,
@@ -76,7 +76,7 @@ class App extends Component {
   This sets loading to false:
   Doing it this way does 2 things
   1: The user will likely see the loading screen even with fast internet
-  2: more importantly this effectly resets the loading state between each search, otherwise the loading screen would only ever appear on the first search
+  2: more importantly this effectively resets the loading state between each search, otherwise the loading screen would only ever appear on the first search
   */
   handleLoading = () => {
     setTimeout( () => {
@@ -90,7 +90,7 @@ class App extends Component {
   //using a noun list, lets get three random words and use them for our tags
   generateDynTags = () => {
 
-    let list = [1,2,3]
+    let list = [1,2,3,4]
     list = list.map(word => {
       return nouns[ Math.floor(Math.random() * nouns.length)]
     })
@@ -104,7 +104,7 @@ class App extends Component {
     return (
       <Router>
         <div className="container">
-          <Header dynTags={this.state.dynTags}/>
+          <Header dynTags={this.state.dynTags} />
   
           <Switch>
             {/* route for all searches and navlink clicks */}
@@ -114,7 +114,7 @@ class App extends Component {
             </Route>
             {/* Home route */}
             <Route exact path="/">
-              <Home />
+              <Home performSearch={this.performSearch} photos={this.state.photos}/>
             </Route>
             {/* 404 not found route */}
             <Route>

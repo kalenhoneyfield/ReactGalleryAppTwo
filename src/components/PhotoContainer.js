@@ -20,7 +20,7 @@ const PhotoContainer = (props) => {
                     // working again 6/4
                     // url={`https://farm66.staticflickr.com/${foto.server}/${foto.id}_${foto.secret}.jpg`} 
                     // url={`https://farm${foto.farm}.staticflickr.com/${foto.server}/${foto.id}_${foto.secret}.jpg`} 
-                    // welp google found the answer to this problem
+                    // whelp... google found the answer to this problem
                     url={`https://live.staticflickr.com/${foto.server}/${foto.id}_${foto.secret}.jpg`} 
                     title={foto.title}
                     key={foto.id} 
