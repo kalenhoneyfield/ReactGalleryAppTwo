@@ -1,8 +1,10 @@
 import React from 'react'
 
+//let randomly select a single word to search against
 import nouns from './wordList/wordList'
 let word = nouns[ Math.floor(Math.random() * nouns.length)]
 
+//lets display a single picture on page load
 const Home = (props) => {
     
     props.performSearch(word, 1, 1)

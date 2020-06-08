@@ -83,11 +83,11 @@ class App extends Component {
       this.setState({
         loading: false
       })
-    }, 1500)
+    }, 800)
 
   }
 
-  //using a noun list, lets get three random words and use them for our tags
+  //using a noun list, lets get {list.length} random words and use them for our tags
   generateDynTags = () => {
 
     let list = [1,2,3,4]

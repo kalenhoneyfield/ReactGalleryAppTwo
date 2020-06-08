@@ -29,6 +29,11 @@ export default apiKey;
 Have you ever wanted to find out what Flickr photographers have photographed and labeled as "llama", "tooth", or "llama tooth"? Well now you can also use this tool to search Flickr. If you aren't in the mood to type, I've also provided 4 complimentary randomly selected nouns you can search for using the easy to click navigation buttons under the search bar. If those search terms don't suit your fancy you're free to reload the page for 4 premium authentic genuinely faux new ones! 
 
 
+## Treehouse Specific Meta
+
+Minor style changes have been applied: Background color, font, box shadows.
+A "Home" route is provided, as well as a 404 route and a search route.
+Additionally, photos found via search or nav tags have a modal provided that allows for easy display and with the author's title directly underneath
 
 ## Meta
 

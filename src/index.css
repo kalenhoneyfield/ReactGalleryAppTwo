@@ -87,7 +87,7 @@ input {
   position: relative;
 }
 
-.photo-container ul img {
+.photo-container ul .zoomImg {
   width: 100%;
   transform: scale(1.25);
   transition: transform 1.25s;
@@ -99,7 +99,7 @@ input {
   margin: auto auto;
 }
 
-.photo-container li:hover img {
+.photo-container li:hover .zoomImg {
   transform: scale(1.65);
 }
 
@@ -172,7 +172,7 @@ input {
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
   background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.3); /* Black w/ opacity */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
 /* Modal Content (image) */
@@ -189,12 +189,11 @@ input {
   display: block;
   width: 80%;
   max-width: 700px;
-  text-align: center;
-  color: #883955;
+  text-align: right;
+  color: #fff;
   padding: 5px 0;
-  height: 150px;
-  font-size: 40px;
-  mix-blend-mode: color-burn;
+  height: 10px;
+  font-size: 16px;
 }
 
 /* Add Animation */

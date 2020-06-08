@@ -4,7 +4,7 @@ import {
   } from "react-router-dom"
 
 const NavBar = (props) => {
-    //loop through the pregenerated tags and create nav links
+    //loop through the pre-generated tags and create nav links
     let dynLinks = props.dynTags.map((word, idx) => {
         return (
             <li key={idx}>
