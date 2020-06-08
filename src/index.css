@@ -81,12 +81,22 @@ input {
   height: 165px;
   overflow: hidden;
   margin-bottom: 15px;
+  display: block;
+  float: left;
+  box-shadow: 5px 5px 5px #3f4850;
+  position: relative;
 }
 
 .photo-container ul img {
   width: 100%;
   transform: scale(1.25);
   transition: transform 1.25s;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto auto;
 }
 
 .photo-container li:hover img {
@@ -128,6 +138,8 @@ input {
   }
 }
 
+
+/* Styles added to the project */
 .FourOhFour {
   fill: #883955;
   text-shadow: 3px 3px 5px #4c3549;
@@ -147,3 +159,74 @@ input {
   box-shadow: 5px 5px 5px #3f4850;
 }
 
+.modal {
+  /* display: none; */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 10px; /* Location of the box */
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.3); /* Black w/ opacity */
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+.caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #883955;
+  padding: 5px 0;
+  height: 150px;
+  font-size: 40px;
+  mix-blend-mode: color-burn;
+}
+
+/* Add Animation */
+.modal-content, .caption {  
+  animation-name: blurIn;
+  animation-duration: 0.8s;
+}
+
+@keyframes blurIn {
+  from {filter:blur(20px)} 
+  to {filter:blur(0px)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.hidden{
+  transition: 1s ease-out;
+  display: none !important;
+}

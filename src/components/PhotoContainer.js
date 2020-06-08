@@ -4,6 +4,7 @@ import {
   } from "react-router-dom"
 
 import Photo from './Photo'
+
 import Loading from './Loading'
 
 const PhotoContainer = (props) => {
@@ -24,8 +25,9 @@ const PhotoContainer = (props) => {
                     url={`https://live.staticflickr.com/${foto.server}/${foto.id}_${foto.secret}.jpg`} 
                     title={foto.title}
                     key={foto.id} 
-
+                    {...foto}
                   /> 
+                 
             )) 
       
     }
